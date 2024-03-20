@@ -1,9 +1,10 @@
-import './FooterComponent.css'
+import NavbarComponent from '../Menu/Navbar/NavbarComponent'
+import './Footer.css'
 import { Link } from 'react-router-dom'
 
 
 
-export default function FooterComponent() {
+export default function Footer() {
     return (
         <>
             <footer>
@@ -33,20 +34,7 @@ export default function FooterComponent() {
                     </Link>
 
                     <div className="d-flex justify-content-center">
-                        <ul className="navbar-nav nav mt-1">
-                        <li>
-                                <button className='estilosBtn'><Link className="li-link" to={'/'}>Cervezas</Link></button>
-                            </li>
-                            <li>
-                                <button className='estilosBtn'><Link className="li-link" to={'/tienda'}>Tienda</Link></button>
-                            </li>
-                            <li>
-                                <button className='estilosBtn'><Link className="li-link" to={'/categoria'}> Categoria </Link></button>
-                            </li>
-                            <li>
-                                <button className='estilosBtn'><Link className="li-link" to={'/contacto'}> Contacto </Link></button>
-                            </li>
-                        </ul>
+                        <NavbarComponent/>
                     </div>
 
                 </div>

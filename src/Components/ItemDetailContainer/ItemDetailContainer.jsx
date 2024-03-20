@@ -1,34 +1,25 @@
-import './ItemDetailContainer.css'
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getCerveza } from "../../asyncMosck";
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import ItemDetail from "../ItemDetail/ItemDetail"
+import { getItem } from "../../asyncMock"
 
 
 export default function ItemDetailContainer() {
+    
+    const { itemId } = useParams();
 
-    const { id } = useParams();
+    const [item, setItem] = useState({});
 
-    const [cerveza, setCerveza] = useState({});
 
     useEffect(() => {
-        setCerveza(getCerveza(id));
-    }, [id]);
-
+        setItem(getItem(itemId));
+    }, [itemId])
 
     return (
-        <>
-        <div className='cervezaDescripContainer'>
-            <div className="container cervezaStyle">
-                <h3 className="text-center"> {cerveza.name} </h3>
-                <img className='cervezaImg' src={cerveza.img} alt={cerveza.name} />
-                <p>Categoria: {cerveza.category}</p>
-                <p>{cerveza.description}</p>
-                <p>Stock: {cerveza.stock}</p>
-                <p>Precio: $ {cerveza.price}</p>
-                <button className='customBtn' onClick={() => handleClick(cerveza.id)}> Comprar </button>
-            </div>
-        </div>
-            
-        </>
-    );
+        <main>
+            {
+                <ItemDetail item={item} />
+            }
+        </main>
+    )
 }

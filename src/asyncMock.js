@@ -61,11 +61,11 @@ export const getCervezas = new Promise((res) => {
     }, 2000);
 })
 
-export const getCerveza = (id) => {
+export function getItem(id) {
     return cervezas.find(cerv => cerv.id === id);
 }
 
-export function getCervezasPorCategoria(categoria) {
-    // Filtrar las cervezas según la categoría proporcionada
-    return cervezas.filter(cerveza => cerveza.category === categoria);
-  }
+export function getProductsByCategory(categoria) {
+        // Filtrar las cervezas según la categoría proporcionada
+        return cervezas.filter(cerveza => cerveza.category === categoria);
+    }
