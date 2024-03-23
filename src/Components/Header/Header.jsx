@@ -1,6 +1,6 @@
 import Menu from '../Menu/Menu'
 import './Header.css'
-import CartWidget from '../CartWidget/CartWidget'
+import CartWidget from '../CardWidget/CartWidget'
 import { Link } from 'react-router-dom'
 
 export const Header = () => {
