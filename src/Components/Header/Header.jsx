@@ -3,7 +3,7 @@ import './Header.css'
 import CartWidget from '../CardWidget/CartWidget'
 import { Link } from 'react-router-dom'
 
-export const Header = () => {
+export default function Header(){
 
     return (
         <header className="navbar navbar-expand-lg encabezado">
